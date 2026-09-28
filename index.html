@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta name="description"
+      content="Aniruddha Dinesh Shinde - M.Sc. Artificial Intelligence & Data Science student focused on Data Analytics, SQL, Python, Power BI, Statistics and Machine Learning.">
+
+<title>Aniruddha Shinde | Data Analytics & AI Student</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+    --cyan: #38bdf8;
+    --cyan-dark: #0284c7;
+    --green: #34d399;
+    --purple: #a855f7;
+    --bg: #020306;
+
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(14, 116, 144, 0.10),
+            transparent 35%
+        ),
+        #020306;
+
+    color: #e2e8f0;
+
+    font-family:
+        'Share Tech Mono',
+        ui-monospace,
+        monospace;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.font-hud {
+    font-family:
+        'Orbitron',
+        system-ui,
+        sans-serif;
+}
+
+.glow {
+    text-shadow:
+        0 0 8px rgba(56,189,248,.45),
+        0 0 20px rgba(56,189,248,.15);
+}
+
+.green-glow {
+    text-shadow:
+        0 0 8px rgba(52,211,153,.4);
+}
+
+
+/* =========================================
+   SCANLINE EFFECT
+========================================= */
+
+.scan {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0),
+            rgba(255,255,255,0) 50%,
+            rgba(0,0,0,.20) 50%,
+            rgba(0,0,0,.20)
+        );
+
+    background-size: 100% 4px;
+}
+
+
+/* =========================================
+   HUD CARDS
+========================================= */
+
+.hud {
+    background:
+        rgba(5, 10, 18, .88);
+
+    backdrop-filter:
+        blur(10px);
+
+    border:
+        1px solid rgba(56,189,248,.20);
+
+    box-shadow:
+        0 0 20px rgba(56,189,248,.06),
+        inset 0 0 20px rgba(56,189,248,.02);
+
+    position: relative;
+}
+
+
+/* HUD CORNERS */
+
+.hud::before,
+.hud::after {
+    content: '';
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border: solid var(--cyan);
+
+    pointer-events: none;
+}
+
+.hud::before {
+    top: -1px;
+    left: -1px;
+
+    border-width:
+        2px 0 0 2px;
+}
+
+.hud::after {
+    bottom: -1px;
+    right: -1px;
+
+    border-width:
+        0 2px 2px 0;
+}
+
+
+/* =========================================
+   BUTTON GLOW
+========================================= */
+
+.gb {
+    box-shadow:
+        0 0 12px rgba(56,189,248,.20);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav-link {
+    transition:
+        color .2s ease,
+        text-shadow .2s ease;
+}
+
+.nav-link:hover {
+    color: var(--cyan);
+
+    text-shadow:
+        0 0 8px rgba(56,189,248,.5);
+}
+
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.section-label {
+    color: #64748b;
+
+    font-size: 10px;
+
+    letter-spacing:
+        .18em;
+}
+
+
+/* =========================================
+   SKILL CARDS
+========================================= */
+
+.skill {
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.skill:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(56,189,248,.75);
+
+    box-shadow:
+        0 0 12px rgba(56,189,248,.12);
+}
+
+
+/* =========================================
+   EDUCATION TIMELINE
+========================================= */
+
+.timeline-line {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(56,189,248,.8),
+            rgba(56,189,248,.05)
+        );
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #010204;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cyan);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hud {
+        backdrop-filter:
+            blur(6px);
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body class="min-h-screen scan">
+
+
+<!-- =========================================
+     ANIMATED BACKGROUND
+========================================= -->
+
+<canvas
+    id="bg"
+    class="fixed inset-0 w-full h-full -z-10 opacity-50 pointer-events-none">
+</canvas>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<header
+    class="hud sticky top-3 z-50 mx-3 md:mx-5 px-4 md:px-6 py-3">
+
+    <div
+        class="flex items-center justify-between gap-4">
+
+        <a
+            href="#home"
+            class="font-hud font-bold text-sm md:text-base
+                   tracking-widest text-sky-400 glow">
+
+            ANIRUDDHA.SHINDE
+
+        </a>
+
+
+        <nav
+            class="hidden md:flex items-center gap-6
+                   text-xs tracking-wider">
+
+            <a href="#about"
+               class="nav-link">
+                ABOUT
+            </a>
+
+            <a href="#skills"
+               class="nav-link">
+                SKILLS
+            </a>
+
+            <a href="#learning"
+               class="nav-link">
+                LEARNING
+            </a>
+
+            <a href="#education"
+               class="nav-link">
+                EDUCATION
+            </a>
+
+            <a href="#contact"
+               class="nav-link">
+                CONTACT
+            </a>
+
+        </nav>
+
+
+        <div
+            class="flex items-center gap-2
+                   text-[10px] text-emerald-400">
+
+            <span
+                class="w-2 h-2 rounded-full
+                       bg-emerald-400 animate-pulse">
+            </span>
+
+            AVAILABLE
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main
+    class="max-w-[1500px] mx-auto px-4 md:px-6">
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section
+    id="home"
+    class="min-h-[85vh] flex items-center py-16">
+
+    <div
+        class="grid lg:grid-cols-12 gap-6 w-full">
+
+
+        <!-- HERO TEXT -->
+
+        <div
+            class="lg:col-span-8">
+
+            <div
+                class="section-label mb-4">
+
+                SYSTEM / PORTFOLIO / 01
+
+            </div>
+
+
+            <p
+                class="text-emerald-400
+                       text-xs md:text-sm
+                       tracking-[.2em] mb-4">
+
+                &gt; INITIALIZING DATA ANALYTICS PROFILE...
+
+            </p>
+
+
+            <h1
+                class="font-hud text-4xl sm:text-5xl
+                       md:text-7xl font-black
+                       tracking-tight
+                       text-sky-400 glow
+                       leading-tight">
+
+                ANIRUDDHA
+                <br>
+
+                <span class="text-slate-200">
+                    SHINDE
+                </span>
+
+            </h1>
+
+
+            <div
+                class="mt-6 text-lg md:text-2xl
+                       text-sky-300">
+
+                DATA ANALYTICS &amp; AI STUDENT
+
+            </div>
+
+
+            <p
+                class="mt-5 max-w-2xl
+                       text-sm md:text-base
+                       text-slate-400
+                       leading-7">
+
+                M.Sc. Artificial Intelligence &amp;
+                Data Science student building a strong
+                foundation in data analytics, SQL,
+                statistics, visualization and
+                machine learning.
+
+            </p>
+
+
+            <div
+                class="flex flex-wrap gap-3 mt-8">
+
+                <a
+                    href="#skills"
+                    class="px-5 py-3
+                           bg-sky-500/10
+                           border border-sky-400/50
+                           hover:bg-sky-500/20
+                           text-sky-300 text-xs
+                           font-hud gb">
+
+                    EXPLORE SKILLS
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="px-5 py-3
+                           bg-emerald-500/10
+                           border border-emerald-400/40
+                           hover:bg-emerald-500/20
+                           text-emerald-300 text-xs
+                           font-hud">
+
+                    CONTACT ME
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATUS PANEL -->
+
+        <div
+            class="lg:col-span-4">
+
+            <div
+                class="hud p-5 h-full">
+
+
+                <div
+                    class="flex justify-between
+                           items-center
+                           border-b border-sky-500/20
+                           pb-3 mb-5">
+
+                    <h2
+                        class="font-hud text-sm
+                               text-sky-400">
+
+                        SYSTEM_STATUS
+
+                    </h2>
+
+                    <span
+                        class="text-[10px]
+                               text-emerald-400">
+
+                        ONLINE
+
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="space-y-5 text-xs">
+
+
+                    <div>
+
+                        <div class="section-label">
+                            CURRENT ROLE
+                        </div>
+
+                        <div
+                            class="text-sky-300
+                                   font-bold mt-1">
+
+                            AI &amp; DATA SCIENCE STUDENT
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="section-label">
+                            PRIMARY INTEREST
+                        </div>
+
+                        <div
+                            class="text-slate-200 mt-1">
+
+                            Data Analytics
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="section-label">
+                            LOCATION
+                        </div>
+
+                        <div
+                            class="text-slate-200 mt-1">
+
+                            Maharashtra, India
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="section-label">
+                            EDUCATION STATUS
+                        </div>
+
+                        <div
+                            class="text-emerald-400 mt-1">
+
+                            CURRENTLY PURSUING M.Sc.
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="pt-4
+                               border-t border-sky-500/20">
+
+
+                        <div
+                            class="section-label mb-3">
+
+                            CORE STACK
+
+                        </div>
+
+
+                        <div
+                            class="flex flex-wrap gap-2">
+
+                            <span
+                                class="px-2 py-1
+                                       border border-sky-500/30
+                                       bg-sky-950/40
+                                       text-sky-300">
+
+                                SQL
+
+                            </span>
+
+
+                            <span
+                                class="px-2 py-1
+                                       border border-sky-500/30
+                                       bg-sky-950/40
+                                       text-sky-300">
+
+                                POWER BI
+
+                            </span>
+
+
+                            <span
+                                class="px-2 py-1
+                                       border border-sky-500/30
+                                       bg-sky-950/40
+                                       text-sky-300">
+
+                                PYTHON
+
+                            </span>
+
+
+                            <span
+                                class="px-2 py-1
+                                       border border-sky-500/30
+                                       bg-sky-950/40
+                                       text-sky-300">
+
+                                STATISTICS
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section
+    id="about"
+    class="py-16">
+
+    <div
+        class="section-label mb-3">
+
+        MODULE / 02
+
+    </div>
+
+
+    <div
+        class="hud p-6 md:p-8">
+
+
+        <div
+            class="flex justify-between
+                   items-center
+                   border-b border-sky-500/20
+                   pb-3 mb-6">
+
+            <h2
+                class="font-hud text-lg md:text-xl
+                       text-sky-400">
+
+                ABOUT_ME
+
+            </h2>
+
+
+            <span
+                class="text-xs text-slate-500">
+
+                [PROFILE_DATA]
+
+            </span>
+
+        </div>
+
+
+        <div
+            class="grid md:grid-cols-2 gap-8">
+
+
+            <div>
+
+                <p
+                    class="text-slate-300
+                           leading-8 text-sm">
+
+                    I am an M.Sc. Artificial Intelligence
+                    &amp; Data Science student with a
+                    background in Computer Science.
+                    My current focus is developing
+                    practical skills in data analysis,
+                    SQL, visualization, statistics
+                    and machine learning.
+
+                </p>
+
+
+                <p
+                    class="text-slate-400
+                           leading-8 text-sm mt-4">
+
+                    I enjoy working with structured data,
+                    discovering patterns and presenting
+                    information through clear
+                    visualizations and dashboards.
+                    I am currently focused on strengthening
+                    my technical foundation and applying
+                    what I learn through practical work.
+
+                </p>
+
+            </div>
+
+
+            <div
+                class="space-y-3">
+
+
+                <div
+                    class="bg-slate-900/60
+                           border border-sky-500/20
+                           p-4">
+
+                    <div class="section-label">
+                        CURRENT OBJECTIVE
+                    </div>
+
+                    <div
+                        class="text-sky-300 mt-2">
+
+                        Build practical Data Analytics
+                        experience
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="bg-slate-900/60
+                           border border-sky-500/20
+                           p-4">
+
+                    <div class="section-label">
+                        INTEREST AREAS
+                    </div>
+
+                    <div
+                        class="text-slate-300 mt-2">
+
+                        Analytics · Visualization ·
+                        Statistics · ML
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="bg-slate-900/60
+                           border border-sky-500/20
+                           p-4">
+
+                    <div class="section-label">
+                        BACKGROUND
+                    </div>
+
+                    <div
+                        class="text-slate-300 mt-2">
+
+                        B.Sc. Computer Science
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     SKILLS
+========================================= -->
+
+<section
+    id="skills"
+    class="py-16">
+
+
+    <div class="section-label mb-3">
+        MODULE / 03
+    </div>
+
+
+    <div
+        class="hud p-6 md:p-8">
+
+
+        <div
+            class="flex justify-between
+                   items-center
+                   border-b border-sky-500/20
+                   pb-3 mb-8">
+
+            <h2
+                class="font-hud text-lg md:text-xl
+                       text-sky-400">
+
+                TECHNICAL_TOOLKIT
+
+            </h2>
+
+
+            <span
+                class="text-xs text-slate-500">
+
+                [SKILLS_MATRIX]
+
+            </span>
+
+        </div>
+
+
+        <div
+            class="grid sm:grid-cols-2
+                   lg:grid-cols-3 gap-5">
+
+
+            <!-- DATA ANALYTICS -->
+
+            <div
+                class="bg-slate-900/50
+                       border border-sky-500/20
+                       p-5">
+
+                <div
+                    class="text-emerald-400
+                           text-xs font-bold mb-4">
+
+                    01 // DATA ANALYTICS
+
+                </div>
+
+
+                <div
+                    class="flex flex-wrap gap-2">
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        SQL
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        MySQL
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        PostgreSQL
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Statistics
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PYTHON -->
+
+            <div
+                class="bg-slate-900/50
+                       border border-sky-500/20
+                       p-5">
+
+                <div
+                    class="text-emerald-400
+                           text-xs font-bold mb-4">
+
+                    02 // PYTHON DATA STACK
+
+                </div>
+
+
+                <div
+                    class="flex flex-wrap gap-2">
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Pandas
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        NumPy
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Matplotlib
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Seaborn
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Scikit-learn
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BI -->
+
+            <div
+                class="bg-slate-900/50
+                       border border-sky-500/20
+                       p-5">
+
+                <div
+                    class="text-emerald-400
+                           text-xs font-bold mb-4">
+
+                    03 // BUSINESS INTELLIGENCE
+
+                </div>
+
+
+                <div
+                    class="flex flex-wrap gap-2">
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Power BI
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Tableau
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Excel
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MACHINE LEARNING -->
+
+            <div
+                class="bg-slate-900/50
+                       border border-sky-500/20
+                       p-5">
+
+                <div
+                    class="text-emerald-400
+                           text-xs font-bold mb-4">
+
+                    04 // MACHINE LEARNING
+
+                </div>
+
+
+                <div
+                    class="flex flex-wrap gap-2">
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Scikit-learn
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Model Evaluation
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Data Preprocessing
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLS -->
+
+            <div
+                class="bg-slate-900/50
+                       border border-sky-500/20
+                       p-5">
+
+                <div
+                    class="text-emerald-400
+                           text-xs font-bold mb-4">
+
+                    05 // DEVELOPMENT TOOLS
+
+                </div>
+
+
+                <div
+                    class="flex flex-wrap gap-2">
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Git
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        GitHub
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOUNDATIONS -->
+
+            <div
+                class="bg-slate-900/50
+                       border border-sky-500/20
+                       p-5">
+
+                <div
+                    class="text-emerald-400
+                           text-xs font-bold mb-4">
+
+                    06 // FOUNDATIONS
+
+                </div>
+
+
+                <div
+                    class="flex flex-wrap gap-2">
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Problem Solving
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Data Analysis
+
+                    </span>
+
+
+                    <span
+                        class="skill px-3 py-2
+                               bg-sky-950/60
+                               border border-sky-500/30
+                               text-sky-300 text-xs">
+
+                        Data Visualization
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CURRENT LEARNING
+========================================= -->
+
+<section
+    id="learning"
+    class="py-16">
+
+
+    <div class="section-label mb-3">
+        MODULE / 04
+    </div>
+
+
+    <div
+        class="grid lg:grid-cols-2 gap-5">
+
+
+        <!-- FOCUS -->
+
+        <div
+            class="hud p-6">
+
+
+            <div
+                class="flex justify-between
+                       border-b border-sky-500/20
+                       pb-3 mb-6">
+
+                <h2
+                    class="font-hud text-lg
+                           text-sky-400">
+
+                    CURRENT_FOCUS
+
+                </h2>
+
+
+                <span
+                    class="text-xs text-slate-500">
+
+                    [IN_PROGRESS]
+
+                </span>
+
+            </div>
+
+
+            <div
+                class="space-y-5">
+
+
+                <div>
+
+                    <div
+                        class="flex justify-between
+                               text-xs mb-2">
+
+                        <span class="text-slate-300">
+                            SQL &amp; Databases
+                        </span>
+
+                        <span class="text-sky-400">
+                            LEARNING
+                        </span>
+
+                    </div>
+
+
+                    <div class="h-1 bg-slate-800">
+
+                        <div
+                            class="h-1 bg-sky-400 w-[75%]">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div
+                        class="flex justify-between
+                               text-xs mb-2">
+
+                        <span class="text-slate-300">
+                            Power BI / Visualization
+                        </span>
+
+                        <span class="text-sky-400">
+                            LEARNING
+                        </span>
+
+                    </div>
+
+
+                    <div class="h-1 bg-slate-800">
+
+                        <div
+                            class="h-1 bg-sky-400 w-[70%]">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div
+                        class="flex justify-between
+                               text-xs mb-2">
+
+                        <span class="text-slate-300">
+                            Statistics
+                        </span>
+
+                        <span class="text-sky-400">
+                            LEARNING
+                        </span>
+
+                    </div>
+
+
+                    <div class="h-1 bg-slate-800">
+
+                        <div
+                            class="h-1 bg-sky-400 w-[65%]">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div
+                        class="flex justify-between
+                               text-xs mb-2">
+
+                        <span class="text-slate-300">
+                            Machine Learning
+                        </span>
+
+                        <span class="text-sky-400">
+                            LEARNING
+                        </span>
+
+                    </div>
+
+
+                    <div class="h-1 bg-slate-800">
+
+                        <div
+                            class="h-1 bg-sky-400 w-[60%]">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="text-[10px] text-slate-500 mt-6">
+
+                * Progress indicators represent
+                current learning focus, not
+                professional proficiency ratings.
+
+            </p>
+
+        </div>
+
+
+        <!-- WORKFLOW -->
+
+        <div
+            class="hud p-6">
+
+
+            <div
+                class="flex justify-between
+                       border-b border-sky-500/20
+                       pb-3 mb-6">
+
+                <h2
+                    class="font-hud text-lg
+                           text-sky-400">
+
+                    ANALYTICS_WORKFLOW
+
+                </h2>
+
+
+                <span
+                    class="text-xs text-slate-500">
+
+                    [PIPELINE]
+
+                </span>
+
+            </div>
+
+
+            <div class="space-y-4">
+
+
+                <div
+                    class="flex gap-4 items-start">
+
+                    <div
+                        class="text-sky-400
+                               font-hud text-sm">
+
+                        01
+
+                    </div>
+
+
+                    <div>
+
+                        <div
+                            class="text-slate-200
+                                   text-sm font-bold">
+
+                            Collect
+
+                        </div>
+
+
+                        <div
+                            class="text-xs
+                                   text-slate-500 mt-1">
+
+                            Understand and prepare
+                            relevant datasets.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="flex gap-4 items-start">
+
+                    <div
+                        class="text-sky-400
+                               font-hud text-sm">
+
+                        02
+
+                    </div>
+
+
+                    <div>
+
+                        <div
+                            class="text-slate-200
+                                   text-sm font-bold">
+
+                            Clean
+
+                        </div>
+
+
+                        <div
+                            class="text-xs
+                                   text-slate-500 mt-1">
+
+                            Handle missing values,
+                            duplicates and
+                            inconsistencies.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="flex gap-4 items-start">
+
+                    <div
+                        class="text-sky-400
+                               font-hud text-sm">
+
+                        03
+
+                    </div>
+
+
+                    <div>
+
+                        <div
+                            class="text-slate-200
+                                   text-sm font-bold">
+
+                            Analyze
+
+                        </div>
+
+
+                        <div
+                            class="text-xs
+                                   text-slate-500 mt-1">
+
+                            Use SQL, Python and
+                            statistics to find
+                            patterns.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="flex gap-4 items-start">
+
+                    <div
+                        class="text-sky-400
+                               font-hud text-sm">
+
+                        04
+
+                    </div>
+
+
+                    <div>
+
+                        <div
+                            class="text-slate-200
+                                   text-sm font-bold">
+
+                            Visualize
+
+                        </div>
+
+
+                        <div
+                            class="text-xs
+                                   text-slate-500 mt-1">
+
+                            Communicate insights
+                            through dashboards
+                            and charts.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     EDUCATION
+========================================= -->
+
+<section
+    id="education"
+    class="py-16">
+
+
+    <div class="section-label mb-3">
+        MODULE / 05
+    </div>
+
+
+    <div
+        class="hud p-6 md:p-8">
+
+
+        <div
+            class="flex justify-between
+                   border-b border-sky-500/20
+                   pb-3 mb-8">
+
+            <h2
+                class="font-hud text-lg
+                       text-sky-400">
+
+                EDUCATION_LOG
+
+            </h2>
+
+
+            <span
+                class="text-xs text-slate-500">
+
+                [ACADEMIC_RECORD]
+
+            </span>
+
+        </div>
+
+
+        <div
+            class="relative pl-7">
+
+
+            <div
+                class="absolute left-1 top-1
+                       bottom-1 w-px
+                       timeline-line">
+            </div>
+
+
+            <!-- MSC -->
+
+            <div
+                class="relative mb-10">
+
+
+                <div
+                    class="absolute -left-[30px]
+                           top-1 w-3 h-3
+                           rounded-full
+                           bg-sky-400
+                           shadow-[0_0_10px_rgba(56,189,248,.7)]">
+                </div>
+
+
+                <div
+                    class="text-[10px]
+                           text-emerald-400">
+
+                    CURRENT
+
+                </div>
+
+
+                <h3
+                    class="font-hud
+                           text-base md:text-lg
+                           text-sky-300 mt-1">
+
+                    M.Sc. Artificial Intelligence
+                    &amp; Data Science
+
+                </h3>
+
+
+                <p
+                    class="text-slate-400
+                           text-sm mt-2">
+
+                    Indira University
+
+                </p>
+
+
+                <p
+                    class="text-slate-500
+                           text-xs mt-2">
+
+                    Currently pursuing
+
+                </p>
+
+            </div>
+
+
+            <!-- BSC -->
+
+            <div
+                class="relative">
+
+
+                <div
+                    class="absolute -left-[30px]
+                           top-1 w-3 h-3
+                           rounded-full
+                           bg-slate-600
+                           border border-sky-500/30">
+                </div>
+
+
+                <div
+                    class="text-[10px]
+                           text-sky-400">
+
+                    COMPLETED
+
+                </div>
+
+
+                <h3
+                    class="font-hud
+                           text-base md:text-lg
+                           text-sky-300 mt-1">
+
+                    B.Sc. Computer Science
+
+                </h3>
+
+
+                <p
+                    class="text-slate-400
+                           text-sm mt-2">
+
+                    Prof. Ramkrishna More College
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PERSONAL INTERESTS
+========================================= -->
+
+<section
+    class="py-16">
+
+
+    <div class="section-label mb-3">
+        MODULE / 06
+    </div>
+
+
+    <div
+        class="hud p-6">
+
+
+        <div
+            class="flex justify-between
+                   border-b border-sky-500/20
+                   pb-3 mb-5">
+
+            <h2
+                class="font-hud text-lg
+                       text-sky-400">
+
+                OFF_GRID
+
+            </h2>
+
+
+            <span
+                class="text-xs text-slate-500">
+
+                [PERSONAL]
+
+            </span>
+
+        </div>
+
+
+        <div
+            class="grid grid-cols-1
+                   sm:grid-cols-3 gap-3">
+
+
+            <div
+                class="p-5 text-center
+                       bg-slate-900/50
+                       border border-sky-500/20">
+
+                <div
+                    class="text-3xl mb-3">
+
+                    🏔️
+
+                </div>
+
+
+                <div
+                    class="font-hud text-xs
+                           text-sky-300">
+
+                    TREKKING
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="p-5 text-center
+                       bg-slate-900/50
+                       border border-sky-500/20">
+
+                <div
+                    class="text-3xl mb-3">
+
+                    🎮
+
+                </div>
+
+
+                <div
+                    class="font-hud text-xs
+                           text-sky-300">
+
+                    GAMING
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="p-5 text-center
+                       bg-slate-900/50
+                       border border-sky-500/20">
+
+                <div
+                    class="text-3xl mb-3">
+
+                    🥊
+
+                </div>
+
+
+                <div
+                    class="font-hud text-xs
+                           text-sky-300">
+
+                    BOXING
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section
+    id="contact"
+    class="py-20">
+
+
+    <div class="section-label mb-3">
+        MODULE / 07
+    </div>
+
+
+    <div
+        class="hud p-6 md:p-10
+               text-center">
+
+
+        <div
+            class="text-emerald-400
+                   text-xs tracking-[.25em] mb-4">
+
+            CONNECTION_READY
+
+        </div>
+
+
+        <h2
+            class="font-hud text-2xl md:text-4xl
+                   text-sky-400 glow">
+
+            LET'S CONNECT
+
+        </h2>
+
+
+        <p
+            class="text-slate-400 text-sm
+                   max-w-xl mx-auto mt-5
+                   leading-7">
+
+            I'm currently focused on my academic
+            journey in Artificial Intelligence
+            &amp; Data Science and building
+            practical skills in data analytics.
+
+        </p>
+
+
+        <div
+            class="flex flex-col sm:flex-row
+                   justify-center gap-3 mt-8">
+
+
+            <a
+                href="mailto:aniruddhashinde2005@gmail.com"
+                class="px-5 py-3
+                       bg-sky-500/10
+                       border border-sky-400/50
+                       text-sky-300 text-xs
+                       font-hud
+                       hover:bg-sky-500/20">
+
+                EMAIL ME
+
+            </a>
+
+
+            <a
+                href="https://github.com/aniruddhashinde2005-alt"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-5 py-3
+                       bg-slate-900
+                       border border-sky-500/30
+                       text-sky-300 text-xs
+                       font-hud
+                       hover:bg-sky-500/20">
+
+                GITHUB
+
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/aniruddha-shinde-1336a3329"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-5 py-3
+                       bg-slate-900
+                       border border-sky-500/30
+                       text-sky-300 text-xs
+                       font-hud
+                       hover:bg-sky-500/20">
+
+                LINKEDIN
+
+            </a>
+
+        </div>
+
+
+        <div
+            class="mt-8 text-xs
+                   text-slate-500">
+
+            aniruddhashinde2005@gmail.com
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer
+    class="border-t
+           border-sky-500/10
+           py-6 px-4">
+
+    <div
+        class="max-w-[1500px] mx-auto
+               flex flex-col md:flex-row
+               justify-between gap-3
+               text-[10px] text-slate-500">
+
+        <span>
+            SYSTEM: PORTFOLIO ONLINE
+        </span>
+
+        <span>
+            ANIRUDDHA SHINDE //
+            DATA ANALYTICS &amp; AI
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+/* =========================================
+   ANIMATED DATA NETWORK BACKGROUND
+========================================= */
+
+try {
+
+    const canvas =
+        document.getElementById('bg');
+
+    const ctx =
+        canvas.getContext('2d');
+
+    let width;
+    let height;
+
+    let particles = [];
+
+
+    function getParticleCount() {
+
+        return window.innerWidth < 768
+            ? 40
+            : 85;
+
+    }
+
+
+    function resizeCanvas() {
+
+        const dpr =
+            Math.min(
+                window.devicePixelRatio || 1,
+                2
+            );
+
+
+        width =
+            window.innerWidth;
+
+        height =
+            window.innerHeight;
+
+
+        canvas.width =
+            width * dpr;
+
+        canvas.height =
+            height * dpr;
+
+
+        canvas.style.width =
+            width + 'px';
+
+        canvas.style.height =
+            height + 'px';
+
+
+        ctx.setTransform(
+            dpr,
+            0,
+            0,
+            dpr,
+            0,
+            0
+        );
+
+    }
+
+
+    class Particle {
+
+        constructor() {
+
+            this.x =
+                Math.random() * width;
+
+            this.y =
+                Math.random() * height;
+
+
+            this.vx =
+                (Math.random() - .5)
+                * .25;
+
+            this.vy =
+                (Math.random() - .5)
+                * .25;
+
+
+            this.radius =
+                Math.random() * 1.5
+                + .5;
+
+
+            this.alpha =
+                Math.random() * .5
+                + .2;
+
+
+            this.pulse =
+                Math.random()
+                * Math.PI
+                * 2;
+
+        }
+
+
+        update() {
+
+            this.x += this.vx;
+
+            this.y += this.vy;
+
+            this.pulse += .015;
+
+
+            if (this.x < -20)
+                this.x = width + 20;
+
+            if (this.x > width + 20)
+                this.x = -20;
+
+
+            if (this.y < -20)
+                this.y = height + 20;
+
+            if (this.y > height + 20)
+                this.y = -20;
+
+        }
+
+
+        draw() {
+
+            const pulse =
+                this.alpha +
+                Math.sin(this.pulse)
+                * .12;
+
+
+            ctx.beginPath();
+
+
+            ctx.arc(
+                this.x,
+                this.y,
+                this.radius,
+                0,
+                Math.PI * 2
+            );
+
+
+            ctx.fillStyle =
+                `rgba(
+                    56,
+                    189,
+                    248,
+                    ${pulse}
+                )`;
+
+
+            ctx.shadowBlur = 8;
+
+            ctx.shadowColor =
+                '#38bdf8';
+
+
+            ctx.fill();
+
+
+            ctx.shadowBlur = 0;
+
+        }
+
+    }
+
+
+    function createParticles() {
+
+        particles = [];
+
+
+        const count =
+            getParticleCount();
+
+
+        for (
+            let i = 0;
+            i < count;
+            i++
+        ) {
+
+            particles.push(
+                new Particle()
+            );
+
+        }
+
+    }
+
+
+    function drawConnections() {
+
+        const maxDistance =
+            window.innerWidth < 768
+                ? 100
+                : 145;
+
+
+        for (
+            let i = 0;
+            i < particles.length;
+            i++
+        ) {
+
+
+            for (
+                let j = i + 1;
+                j < particles.length;
+                j++
+            ) {
+
+
+                const a =
+                    particles[i];
+
+                const b =
+                    particles[j];
+
+
+                const dx =
+                    a.x - b.x;
+
+                const dy =
+                    a.y - b.y;
+
+
+                const distance =
+                    Math.sqrt(
+                        dx * dx +
+                        dy * dy
+                    );
+
+
+                if (
+                    distance <
+                    maxDistance
+                ) {
+
+
+                    const opacity =
+                        (1 -
+                         distance /
+                         maxDistance)
+                        * .14;
+
+
+                    ctx.beginPath();
+
+
+                    ctx.moveTo(
+                        a.x,
+                        a.y
+                    );
+
+
+                    ctx.lineTo(
+                        b.x,
+                        b.y
+                    );
+
+
+                    ctx.strokeStyle =
+                        `rgba(
+                            14,
+                            165,
+                            233,
+                            ${opacity}
+                        )`;
+
+
+                    ctx.lineWidth =
+                        .7;
+
+
+                    ctx.stroke();
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+    function drawAmbientGlow() {
+
+        const gradient =
+            ctx.createRadialGradient(
+                width * .5,
+                height * .10,
+                0,
+                width * .5,
+                height * .10,
+                height * .7
+            );
+
+
+        gradient.addColorStop(
+            0,
+            'rgba(14,116,144,.08)'
+        );
+
+
+        gradient.addColorStop(
+            .5,
+            'rgba(2,6,23,.03)'
+        );
+
+
+        gradient.addColorStop(
+            1,
+            'rgba(0,0,0,0)'
+        );
+
+
+        ctx.fillStyle =
+            gradient;
+
+
+        ctx.fillRect(
+            0,
+            0,
+            width,
+            height
+        );
+
+    }
+
+
+    function animate() {
+
+        ctx.clearRect(
+            0,
+            0,
+            width,
+            height
+        );
+
+
+        drawAmbientGlow();
+
+
+        particles.forEach(
+            particle =>
+                particle.update()
+        );
+
+
+        drawConnections();
+
+
+        particles.forEach(
+            particle =>
+                particle.draw()
+        );
+
+
+        requestAnimationFrame(
+            animate
+        );
+
+    }
+
+
+    resizeCanvas();
+
+    createParticles();
+
+    animate();
+
+
+    window.addEventListener(
+        'resize',
+        () => {
+
+            resizeCanvas();
+
+            createParticles();
+
+        }
+    );
+
+
+} catch (error) {
+
+    console.warn(
+        'Background animation unavailable:',
+        error
+    );
+
+}
+
+
+/* =========================================
+   SYSTEM LOG
+========================================= */
+
+const systemLogs = [
+
+    'Portfolio environment initialized.',
+    'Academic profile loaded.',
+    'Data analytics toolkit detected.',
+    'SQL module ready.',
+    'Business intelligence tools detected.',
+    'Python analytics stack loaded.',
+    'Machine learning foundation detected.',
+    'Git/GitHub workflow ready.',
+    'Profile system ready.'
+
+];
+
+
+console.log(
+    '[SYSTEM]',
+    systemLogs.join('\n')
+);
+
+</script>
+
+</body>
+</html>
